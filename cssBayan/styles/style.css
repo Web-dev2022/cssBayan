@@ -198,3 +198,104 @@ html {
 {
   color: #333333;
 }
+
+/* MEDIA */
+
+@media all and (max-width: 1024px) {
+
+  /* BASE */
+
+  html {
+    font-size: calc(15px + (18 - 15) * ( (100vw - 300px) / (1024 - 300)));
+  }
+
+  .container {
+   padding: 0 calc(5px + (20 - 5) * ( (100vw - 300px) / (1024 - 300))); 
+  }
+
+  /* HEADER */
+
+  .header {
+    padding: calc(15px + (30 - 15) * ( (100vw - 300px) / (1024 - 300)))  0;
+  }
+
+  .header-title {
+    font-size: calc(18px + (30 - 18) * ( (100vw - 300px) / (1024 - 300)));
+  }
+
+  /* MAIN */
+
+  .life-rules-item-header {
+    padding: calc(5px + (10 - 5) * ( (100vw - 300px) / (1024 - 300)))  0;
+  }
+
+  .life-rules-item-img {
+    margin-bottom: calc(10px + (20 - 10) * ( (100vw - 300px) / (1024 - 300)));;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: calc(15px + (30 - 15) * ( (100vw - 300px) / (1024 - 300)))  0;
+    font-size: calc(14px + (16 - 14) * ( (100vw - 300px) / (1024 - 300)));
+  }
+
+  .footer-copyright-block {
+    margin-right: calc(10px + (20 - 10) * ( (100vw - 300px) / (1024 - 300)));
+  }
+
+  .footer-copyright-block span {
+    margin-right: calc(10px + (20 - 10) * ( (100vw - 300px) / (1024 - 300)));
+  }
+
+}
+
+@media all and (max-width: 820px) {
+
+  .life-rules-item-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Remove hover for mobile */
+
+  .life-rules-list:hover .life-rules-item-btn {
+    transform: rotate(180deg);
+  }
+  
+  .life-rules-list:hover .life-rules-item-title {
+    color: #004ad5;
+  }
+
+  .life-rules-list:hover .life-rules-item.active .life-rules-item-title {
+    color: #333333;
+  }
+  
+  .life-rules-item:hover .life-rules-item-content {
+    transform: none;
+    max-height: 0;
+  }
+
+  .life-rules-item.active .life-rules-item-content {
+    max-height: calc(100vw - 20px);
+  }
+  
+  .life-rules-item.active .life-rules-item-btn {
+    transform: none;
+  }
+  
+  .life-rules-item-btn {
+    background-image: url(../images/icons/arrow-up-mobile.svg);
+    transform: rotate(180deg);
+  }
+  
+  .life-rules-item.active  .life-rules-item-btn {
+    background-image: url(../images/icons/arrow-up.svg);
+  }
+  
+  .footer-rs-school-link:hover,
+  .footer-github-link:hover {
+    color: #004ad5;
+  }
+
+}

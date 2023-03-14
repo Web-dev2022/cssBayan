@@ -66,10 +66,6 @@ html {
   transform: rotate(180deg) translateX(0);
 }
 
-.life-rules-list:hover .life-rules-item.active .life-rules-item-btn {
-  transform: rotate(0) translateX(0);
-}
-
 .life-rules-list:hover .life-rules-item-title 
 {
   color: #333333;
@@ -80,18 +76,20 @@ html {
   border-top: 1px solid #bab6b6;
 }
 
-.life-rules-item:hover .life-rules-item-content {
-  transform: scale(1);
-  max-height: calc(820px * 0.7);
-  will-change: transform;
+.life-rules-item label {
+  cursor: pointer;
 }
 
-.life-rules-item:hover .life-rules-item-img {
+.life-rules-item:hover .life-rules-item-img,
+.life-rules-item input:checked + label .life-rules-item-img {
   opacity: 1;
+  max-height: 530px;
+  transform: scale(1);
+  margin-bottom: 20px;
 }
 
 .life-rules-item:hover .life-rules-item-btn {
-  transform: rotate(0deg) translateX(0);;
+  transform: rotate(0deg) translateX(0);
 }
 
 .life-rules-item-header {
@@ -125,41 +123,16 @@ html {
   will-change: transform;
 }
 
-.life-rules-item-content {
-  transform: scale(0);
-  text-align: center;
+.life-rules-item-img {
+  display: block;
+  width: 100%;
+  max-width: 70%;
   max-height: 0;
-  overflow: hidden;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0);
   transition: 0.2s all linear;
   will-change: transform;
-}
-
-.life-rules-item-img {
-  max-width: 70%;
-  height: auto;
-  margin-bottom: 20px;
-  opacity: 0;
-  transition: 0.3s opacity linear;
-  will-change: opacity;
-  object-fit: cover;
-}
-
-.life-rules-item.active .life-rules-item-content {
-  transform: scale(1);
-  max-height: calc(820px * 0.7);
-}
-
-.life-rules-item.active .life-rules-item-img {
-  opacity: 1;
-}
-
-.life-rules-item.active .life-rules-item-title {
-  color: #333333;
-}
-
-.life-rules-item.active .life-rules-item-btn
-{
-  transform: rotate(0deg) translateX(30px);
 }
 
 .life-rules-item:last-child {
@@ -267,30 +240,20 @@ html {
     color: #004ad5;
   }
 
-  .life-rules-list:hover .life-rules-item.active .life-rules-item-title {
-    color: #333333;
-  }
-  
-  .life-rules-item:hover .life-rules-item-content {
-    transform: none;
-    max-height: 0;
+  .life-rules-item-img {
+    margin-bottom: 0;
   }
 
-  .life-rules-item.active .life-rules-item-content {
-    max-height: calc(100vw - 20px);
-  }
-  
-  .life-rules-item.active .life-rules-item-btn {
-    transform: none;
-  }
+.life-rules-item:hover .life-rules-item-img {
+  opacity: 0;
+  max-height: 0;
+  transform: scale(0);
+  margin-bottom: 0;
+}
   
   .life-rules-item-btn {
     background-image: url(../images/icons/arrow-up-mobile.svg);
     transform: rotate(180deg);
-  }
-  
-  .life-rules-item.active  .life-rules-item-btn {
-    background-image: url(../images/icons/arrow-up.svg);
   }
   
   .footer-rs-school-link:hover,
